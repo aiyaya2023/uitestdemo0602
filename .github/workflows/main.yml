@@ -67,6 +67,7 @@ jobs:
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Cypress test ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
   build-and-test:
+    needs: tests
     runs-on: ubuntu-latest
 
     steps:
@@ -77,4 +78,4 @@ jobs:
       run: npm install
 
     - name: Run Cypress tests
-      run: npx cypress run --record --key cbfa8b78-74fa-44d6-99cb-aa18e0044dc4 --project z4j9wf
+      run: npx cypress run --record --key <CYPRESS_RECORD_KEY> --project <CYPRESS_PROJECT_ID>
