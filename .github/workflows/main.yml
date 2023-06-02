@@ -26,10 +26,13 @@ jobs:
           working-directory: testcode/browser
 
       - name: Chrome
-        uses: ./
+        uses: ./ -- --key ${{ secrets.CYPRESS_RECORD_KEY }} --project 
         with:
           working-directory: testcode/browser
           browser: chrome
+          record: true
+          key: ${{ secrets.CYPRESS_RECORD_KEY }}
+          project: ${{ secrets.CYPRESS_PROJECT_ID }}
 
       - uses: actions/upload-artifact@v3
         with:
@@ -50,10 +53,6 @@ jobs:
           working-directory: testcode/browser
           browser: chrome
           headed: false
-
-      - name: Run Cypress tests
-        working-directory: /home/runner/work/uitestdemo0602/uitestdemo0602/testcode/browser
-        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --project ${{ secrets.CYPRESS_PROJECT_ID }}
 
       - uses: actions/upload-artifact@v3
         with:
