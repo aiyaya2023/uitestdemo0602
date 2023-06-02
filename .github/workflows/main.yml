@@ -51,7 +51,9 @@ jobs:
           browser: chrome
           headed: false
 
-      - run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --project ${{ secrets.CYPRESS_PROJECT_ID }}
+      - name: Run Cypress tests
+        working-directory: testcode/browser
+        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --project ${{ secrets.CYPRESS_PROJECT_ID }}
 
       - uses: actions/upload-artifact@v3
         with:
