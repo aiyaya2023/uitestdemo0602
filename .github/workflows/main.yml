@@ -52,7 +52,7 @@ jobs:
           headed: false
 
       - name: Run Cypress tests
-        working-directory: cypress/e2e
+        working-directory: /home/runner/work/uitestdemo0602/uitestdemo0602/testcode/browser
         run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --project ${{ secrets.CYPRESS_PROJECT_ID }}
 
       - uses: actions/upload-artifact@v3
