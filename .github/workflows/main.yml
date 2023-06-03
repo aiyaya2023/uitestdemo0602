@@ -31,8 +31,8 @@ jobs:
           working-directory: testcode/browser
           browser: chrome
           record: true
-          key: ${{ secrets.CYPRESS_RECORD_KEY }}
-          project: ${{ secrets.CYPRESS_PROJECT_ID }}
+          key: cbfa8b78-74fa-44d6-99cb-aa18e0044dc4
+          project: z4j9wf
 
       - uses: actions/upload-artifact@v3
         with:
