@@ -31,6 +31,10 @@ jobs:
           working-directory: testcode/browser
           browser: chrome
 
+      - name: Run Cypress tests
+        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
+        working-directory: testcode/browser
+
       - uses: actions/upload-artifact@v3
         with:
           name: screenshots-in-chrome
