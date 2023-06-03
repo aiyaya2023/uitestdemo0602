@@ -26,7 +26,7 @@ jobs:
           working-directory: testcode/browser
 
       - name: Chrome
-        uses: ./ -- --key ${{ secrets.CYPRESS_RECORD_KEY }} --project 
+        uses: ./
         with:
           working-directory: testcode/browser
           browser: chrome
